@@ -32,6 +32,7 @@ class BoardPage extends StatelessWidget {
 // 앱바생성 함수
 AppBar _buildProfileAppBar() {
   return AppBar(
+    backgroundColor: Colors.white10,
     
   );
 }
