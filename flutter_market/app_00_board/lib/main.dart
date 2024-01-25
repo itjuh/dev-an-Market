@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,27 +13,69 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: BoardPage(),
+      home: MainPage(),
     );
   }
 }
 
-class BoardPage extends StatelessWidget {
-  const BoardPage({Key? key}): super(key:key);
+class MainPage extends StatelessWidget {
+  const MainPage({Key? key}): super(key:key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _buildProfileAppBar(),
-      
+      appBar: _buildAppBar(),
+      // body: 
     );
   }
 }
 
 // 앱바생성 함수
-AppBar _buildProfileAppBar() {
+AppBar _buildAppBar() {
   return AppBar(
-    backgroundColor: Colors.white10,
-    
+    backgroundColor: Colors.grey.shade400,
+    elevation: 1.0,
+    actions: [
+      Spacer(),
+      IconButton(
+        icon: Icon(
+          CupertinoIcons.search,
+          color: Colors.black87,
+          size: 25.0,
+          ),
+        onPressed: (){
+          debugPrint('search button is clicked');
+        },
+      ),
+      SizedBox(
+        width: 3.0,
+      ),
+      IconButton(
+        icon: Icon(
+          Icons.calendar_month_outlined,
+          color: Colors.black87,
+          size: 25.0,
+          ),
+        onPressed: (){
+          debugPrint('calendar button is clicked');
+        },
+      ),
+      SizedBox(
+        width: 3.0,
+      ),
+      IconButton(
+        icon: Icon(
+          CupertinoIcons.bell,
+          color: Colors.black87,
+          size: 25.0,
+          ),
+        onPressed: (){
+          debugPrint('bell button is clicked');
+        },
+      ),
+      SizedBox(
+        width: 3.0,
+      ),
+    ],
   );
 }
