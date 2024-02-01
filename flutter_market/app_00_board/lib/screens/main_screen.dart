@@ -15,8 +15,8 @@ class _MainItemScreenState extends State<MainItemScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Palette.backgroundColor,
+      // item widget
       body: Container(
-        // width: 317,
         padding: EdgeInsets.symmetric(
           horizontal: 20.0,
         ),
@@ -58,7 +58,7 @@ class _MainItemScreenState extends State<MainItemScreen> {
                 // item info
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 14.0),
-                  width: 225.0, // content 192
+                  width: 225, // content 192
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
