@@ -1,0 +1,34 @@
+[ 페이지 이동 ]
+
+// 머티리얼 앱에 기본경로 설정
+// 라우터 경로 설정
+MaterialApp(
+      initialRoute: '/',
+      routes:{
+        '/': (context) => MainPage(),
+        '/board' : (context) => Board(),
+      }
+)
+
+Navigator.push(context,
+    // 페이지 라우터
+    MaterialPageRoute(
+        // 빌더로 상위전송 차단
+        // 보낼 파라미터가 없다면 context 를 _로 보내면 된다.
+        builder: (context) => 전송위젯()
+        ),
+    ,);
+
+페이지는 스택형식으로 쌓임
+// 이전페이지로 이동 됨
+Navigator.pop(context);
+
+
+[ 버튼종류 ]
+ElevatedButton
+IconButton
+TextButton
+
+onPressed
+
+onTouch

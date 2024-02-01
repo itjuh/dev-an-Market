@@ -1,0 +1,27 @@
+[ 널 세이프티 ]
+
+Null : 값이 정해지지 않음
+변수는 널값은 가질 수 없음
+
+Class내의 변수는 초기화 해야함
+class Person{
+    //String name; // 초기화 안됨
+    String? name;
+}
+
+1. nullable변수는 ?로 null값 또는 타입값을 인자로 가질 수 있음
+2. 변수에 Not nullable type의 확신이 있다면 변수!
+로 작성하면 됨
+ex) int? y;
+int x = y; //error
+int x = y!;
+
+3. 파라미터를 받지않는 함수
+void main(){
+    print(add(a:4, b: null)); //error
+}
+// int add({int a, int b}){ //파라미터가 int가 아닌 null이여서 에러발생
+int add({required int a,required int b}){ //required키워드 설정
+    if(b == null) return a; 
+    return a + b;
+}
