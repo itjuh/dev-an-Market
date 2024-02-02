@@ -47,7 +47,9 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // 상단 앱바
       appBar: _buildAppBar(context),
+      // 메인
       body: MainProductList(),
       // 하단 앱바
       bottomNavigationBar: BottomNavigationBar(
@@ -158,7 +160,7 @@ class BuildMyLocation extends StatefulWidget {
 }
 
 class _BuildMyLocationState extends State<BuildMyLocation> {
-  final _locationList = ['강남구', '노원구'];
+  final _locationList = ['도봉구', '노원구'];
   String? _selectedLocation = '';
 
   @override
