@@ -13,16 +13,14 @@ class BannerBuild extends StatelessWidget {
             left: 21,
           ),
           // 타이틀
-          child: TextTitle('회원님을 기다리는 모임'),
+          child: textTitle('회원님을 기다리는 모임'),
         ),
         // 컨텐츠
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
             children: [
-              smallImageBanner(),
-              smallImageBanner(),
-              smallImageBanner(),
+              for(int i = 0; i < 10; i++)
               smallImageBanner(),
             ],
           ),
@@ -32,7 +30,7 @@ class BannerBuild extends StatelessWidget {
             left: 21,
           ),
           // 타이틀
-          child: TextTitle('회원님을 기다리는 모임'),
+          child: textTitle('회원님을 기다리는 모임'),
         ),
         // 큰 이미지 배너
         bigImageBanner(),

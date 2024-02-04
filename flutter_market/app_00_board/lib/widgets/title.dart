@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-Widget TextTitle(String txt) {
+Widget textTitle(String txt) {
   return Row(
     children: [
       Text(

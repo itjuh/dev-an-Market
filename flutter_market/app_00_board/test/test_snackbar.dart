@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       routes:{
         '/': (context) => MainPage(),
         '/board' : (context) => Board(),
-        '/main' : (context) => MainProductList(),
+        '/main' : (context) => MainScreen(),
       }
     );
   }
@@ -33,7 +33,7 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildAppBar(context),
-      body: MainProductList(),
+      body: MainScreen(),
     );
   }
 }
