@@ -6,6 +6,7 @@ Widget itemImage() {
     width: 80.0,
     height: 80.0,
     decoration: BoxDecoration(
+      color: Colors.white,
       border: Border.all(color: Colors.black45),
       borderRadius: BorderRadius.all(
         Radius.circular(14.0),
@@ -24,56 +25,46 @@ Widget itemImage() {
   );
 }
 
-Widget productKeywordSetting(List<String> key) {
+Widget productKeywordSetting(List<String> key, Color txt) {
   return Row(
     children: [
-      Text(
-        key[0],
-        style: TextStyle(
-          fontSize: 10.0,
-          color: Color(0xFF606060),
-        ),
-      ),
-      Text(
-        ' · ',
-        style: TextStyle(
-          fontSize: 10.0,
-          color: Color(0xFF606060),
-        ),
-      ),
-      Text(
-        key[1],
-        style: TextStyle(
-          fontSize: 10.0,
-          color: Color(0xFF606060),
-        ),
-      ),
-      Text(
-        ' · ',
-        style: TextStyle(
-          fontSize: 10.0,
-          color: Color(0xFF606060),
-        ),
-      ),
-      Text(
-        key[2],
-        style: TextStyle(
-          fontSize: 10.0,
-          color: Color(0xFF606060),
-        ),
-      ),
+      for (int i = 0; i < key.length; i++)
+        if (i != key.length - 1) ...[
+          Text(
+            key[i],
+            style: TextStyle(
+              fontSize: 10.0,
+              color: txt,
+            ),
+          ),
+          Text(
+            ' · ',
+            style: TextStyle(
+              fontSize: 10.0,
+              color: txt,
+            ),
+          ),
+        ] else
+          Text(
+            key[i],
+            style: TextStyle(
+              fontSize: 10.0,
+              color: txt,
+            ),
+          ),
     ],
   );
 }
 
-Widget meetingKeywordSetting(List<String> key) {
+// Color(0xFF606060)
+Widget meetingKeywordSetting(List<String> key, Color txt) {
   return Row(
     children: [
       Text(
         '#${key[0]}',
         style: TextStyle(
           fontSize: 10.0,
-          color: Color(0xFF606060),
+          color: txt,
         ),
       ),
       SizedBox(
@@ -83,7 +74,7 @@ Widget meetingKeywordSetting(List<String> key) {
         '#${key[1]}',
         style: TextStyle(
           fontSize: 10.0,
-          color: Color(0xFF606060),
+          color: txt,
         ),
       ),
       SizedBox(
@@ -93,7 +84,7 @@ Widget meetingKeywordSetting(List<String> key) {
         '#${key[2]}',
         style: TextStyle(
           fontSize: 10.0,
-          color: Color(0xFF606060),
+          color: txt,
         ),
       ),
       SizedBox(
@@ -103,7 +94,7 @@ Widget meetingKeywordSetting(List<String> key) {
         '#${key[3]}',
         style: TextStyle(
           fontSize: 10.0,
-          color: Color(0xFF606060),
+          color: txt,
         ),
       ),
     ],

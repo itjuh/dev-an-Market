@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         // 첫페이지 home 또는 initialRoute로 등록
         // home: MainPage(),
-        initialRoute: '/meeting',
+        initialRoute: '/',
         routes: {
           '/': (context) => MainPage(),
           // '/search': (context) => MainScreen(),
@@ -115,8 +115,6 @@ class _MainPageState extends State<MainPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // 상단 앱바
-      appBar: _buildAppBar(context),
       body: [
         // mainPage
         TabBarView(
@@ -144,90 +142,3 @@ class _MainPageState extends State<MainPage>
   }
 }
 
-// 앱바생성 함수
-AppBar _buildAppBar(BuildContext context) {
-  return AppBar(
-    backgroundColor: Colors.white,
-    elevation: 0.0,
-    actions: [
-      Container(
-        padding: EdgeInsets.only(
-          top: 0,
-          left: 14,
-        ),
-        // 메인 장소
-        child: BuildMyLocation(),
-      ),
-
-      Spacer(),
-      // 검색 아이콘
-      IconButton(
-        icon: Icon(
-          Icons.search,
-          color: Colors.black87,
-          size: 24.0,
-        ),
-        onPressed: () {
-          debugPrint('search button is clicked');
-          Navigator.pushNamed(context, '/search');
-        },
-      ),
-      SizedBox(
-        width: 13.0,
-      ),
-      // 알람 아이콘
-      IconButton(
-        icon: Icon(
-          Icons.notifications_none,
-          color: Colors.black87,
-          size: 24.0,
-        ),
-        onPressed: () {
-          Navigator.pushNamed(context, '/alert');
-        },
-      ),
-      SizedBox(
-        width: 13.0,
-      ),
-    ],
-  );
-}
-
-class BuildMyLocation extends StatefulWidget {
-  const BuildMyLocation({super.key});
-
-  @override
-  State<BuildMyLocation> createState() => _BuildMyLocationState();
-}
-
-class _BuildMyLocationState extends State<BuildMyLocation> {
-  final locationList = ['도봉구', '노원구'];
-  String? selectedLocation = '';
-
-  @override
-  void initState() {
-    super.initState();
-    setState(() {
-      selectedLocation = locationList[0];
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return DropdownButton<String?>(
-      icon: Icon(Icons.expand_more),
-      items: locationList.map((String loc) {
-        return DropdownMenuItem<String>(
-          value: loc,
-          child: Text(loc),
-        );
-      }).toList(),
-      onChanged: (String? value) {
-        setState(() {
-          selectedLocation = value;
-        });
-      },
-      value: selectedLocation,
-    );
-  }
-}

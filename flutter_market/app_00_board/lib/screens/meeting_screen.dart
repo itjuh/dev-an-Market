@@ -1,4 +1,5 @@
 import 'package:app_00_board/main.dart';
+import 'package:app_00_board/screens/meeting_cont_screen.dart';
 import 'package:app_00_board/widgets/content.dart';
 import 'package:flutter/material.dart';
 
@@ -13,42 +14,44 @@ class _MeetingScreenState extends State<MeetingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _buildAppBar(context),
-      body: buildMeeting(),
+      // appbar
+      // appBar: _buildSubAppBar(context),
+      // body: buildMeeting(),
+      body: MeetingContentScreen(),
     );
   }
+}
 
-  @override
-  AppBar _buildAppBar(BuildContext context) {
-    return AppBar(
-      backgroundColor: Colors.white,
-      elevation: 0.0,
-      centerTitle: true,
-      title: Text(
-        '모임',
-        style: TextStyle(
-          fontSize: 14.0,
-          fontWeight: FontWeight.bold,
-        ),
+@override
+AppBar _buildSubAppBar(BuildContext context) {
+  return AppBar(
+    backgroundColor: Colors.white,
+    elevation: 0.0,
+    centerTitle: true,
+    title: Text(
+      '모임',
+      style: TextStyle(
+        fontSize: 14.0,
+        fontWeight: FontWeight.bold,
       ),
-      actions: [
-        // 알람 아이콘
-        IconButton(
-          icon: Icon(
-            Icons.notifications_none,
-            color: Colors.black87,
-            size: 24.0,
-          ),
-          onPressed: () {
-            Navigator.pushNamed(context, '/alert');
-          },
+    ),
+    actions: [
+      // 알람 아이콘
+      IconButton(
+        icon: Icon(
+          Icons.notifications_none,
+          color: Colors.black87,
+          size: 24.0,
         ),
-        SizedBox(
-          width: 14.0,
-        ),
-      ],
-    );
-  }
+        onPressed: () {
+          Navigator.pushNamed(context, '/alert');
+        },
+      ),
+      SizedBox(
+        width: 14.0,
+      ),
+    ],
+  );
 }
 
 Widget buildMeeting() {
@@ -222,7 +225,7 @@ Widget _buildMeeting() {
                   ),
                   // keywordlist
                   meetingKeywordSetting(
-                    ['도봉동', '반려견', '산책', '간식'],
+                    ['도봉동', '반려견', '산책', '간식'], Color(0xFF606060),
                   ),
                   // padding
                   SizedBox(
